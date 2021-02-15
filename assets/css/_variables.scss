@@ -1,0 +1,209 @@
+$black: #353535;
+// $yellow: #F4C51D;
+// $yellow: #F4C51D;
+$yellow: #F4C51D;
+  /////////// device width and screensize ////////////////
+  // Small screen / phone
+  $sm: 576px;
+  // Medium screen / tablet
+  $md: 768px;
+  // Large screen / desktop
+  $lg: 992px;
+  // Extra large screen / wide desktop
+  $xl: 1200px;
+  
+$text: #5D6473;
+$grey: #f7f7f7;
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    &:hover{
+        color: #2B6CB0;
+    }
+}
+@media screen and (min-width: 1400px){.container, main .container,nav .container,.container-sm, .container-md, .container-lg, .container-xl {    max-width: 1280px;}}
+.circle{    border-radius: 100%;}
+.primary{    background: $yellow;}
+.text-yellow{    color: $yellow;}
+.grey{    background: #f3f3f3;}
+.bg-light-primary{    background: lighten(#F4C51D, 30);}
+::-moz-selection { /* Code for Firefox */
+    color: #333;
+    background: lighten($yellow, 5) ;
+  }
+  
+::selection {
+color: #333;
+background: lighten($yellow, 5) ;
+}
+
+
+@mixin mediaq($xy) {
+    @media only screen and (max-width: $xy){
+        @content;
+    }
+ }
+ 
+@mixin center {    display: flex;    align-items: center;    justify-content: center;}
+.btn{
+    border-radius: 0;
+    &.focus, &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+}
+.btn-yellow, .btn-black,.btn-green {
+    background-color: $yellow;
+    padding: 0.75rem 2.5rem;
+    position: relative;
+    z-index: 2;
+    border: 2px solid $yellow;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 0%;
+        left: 0;
+        background-color: #fff;
+        z-index: -1;
+        transition: 0.25s ease;
+    }
+    &:hover{
+        &::before{
+            width: 100%;
+        }
+    }
+}
+.btn-black{
+    background: #121212;
+    color: #fff;
+    border: 2px solid #121212;
+    &:hover{
+        color: #333;
+    }
+}
+.btn-green{
+    font-weight: bold;
+font-size: 16px;
+line-height: 18px;
+letter-spacing: 1px;
+
+color: #FFFFFF;
+    border-color:  #04C45C;
+    background: #04C45C;
+}
+@keyframes updown{
+    from{
+        transform: translateY(-10px);
+    }
+    to{
+        transform: translateY(10px);
+    }
+}
+.card{
+    border-radius: 0;
+    border-color: #e7e7e7;
+}
+.custom-select{
+    border-radius: 0;
+}
+.section-heading{
+    margin-bottom: 2rem;
+    h2{
+        font-weight: bold;
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #5D6472;
+        position: relative;
+        margin-bottom: 0;
+        @include mediaq($sm){
+            font-size: 26px;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            background-color: #F4C51D;
+            left: 50%;
+            bottom: -.5rem;
+            height: 0.25rem;
+            width: 5rem;
+            transform: translateX(-50%);
+        }
+    }
+}
+a{
+    color: #333;
+}
+.slide-in{
+    animation: slideIn  0.3s both;
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+}
+@keyframes slideIn {
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+    100% {
+      transform:translateY(0rem);
+      opacity: 1;
+    }
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+  }
+  
+.nav-pills{
+    .nav-link{
+        border-radius: 0;
+        color: #333;
+        &.active{
+            background: $yellow;
+            color: #333;
+        }
+    }
+}
+.page-header{
+    @include center;
+    h1{
+        font-weight: bold;
+        font-size: 42px;
+        text-align: center;
+        letter-spacing: 3px;
+        color: $black;
+        display: inline;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: -.5rem;
+            width: 100%;
+            left: 0;
+            border:  2px solid $yellow;
+        }
+        @include mediaq($sm){
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+    }
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+.table td{
+    padding: 0 0.75rem;
+}
+.dlist-align{
+    justify-content: space-between;
+}
+.inr::before{
+    content: '\20B9';
+}

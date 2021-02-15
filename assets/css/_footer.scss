@@ -1,0 +1,103 @@
+footer{
+    padding: 12rem 0 0;
+    margin-top: -120px;
+    background-color: #f7f7f7;
+    .title{
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        text-transform: capitalize;
+        color: #112233;
+        margin-bottom: 1.5rem;
+    }
+    .widget{
+        @include mediaq($md){
+            margin-bottom: 1.5rem;
+        }
+        .logo{
+            max-width: 180px;
+            img{
+                filter: grayscale(75%);
+            }
+        }
+        p{
+            font-size: 14px;
+            line-height: 20px;
+            /* or 143% */
+            text-transform: capitalize;
+            color: #555555;
+        }
+  
+        .follow-us{
+            display: flex;
+            a{
+                display: flex;
+                width: 2rem;
+                overflow: hidden;
+                height: 2rem;
+                border-radius: 80%;
+                border: 1px solid $yellow;
+                transition: 0.3s ease;
+                &:not(:last-child){
+                    margin-right: 1.5rem;
+                }
+                &:hover{
+                    background-color: $yellow;
+                    svg{
+                        path{
+                            fill: #f7f7f7;
+                        }
+                    }
+                }
+                svg{
+                    margin: auto;
+                    path{
+                        fill: $yellow;
+                    }
+                }
+            }
+        }
+    }
+    .nav{
+        margin-top: 1.5rem;
+        .nav-link{
+            padding-top:0.5rem;
+            padding-bottom:0.5rem;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.28px;
+            text-transform: capitalize;
+            color: #555555;
+        }
+        @include mediaq($md){
+            margin-bottom: 1.5rem;
+        }
+    }
+    .list-group {
+        li{
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            /* or 143% */
+            letter-spacing: 0.28px;
+            text-transform: capitalize;
+            color: #555555;
+            margin-bottom: 0.75rem;
+            a{
+                color: inherit;
+            }
+        }
+        @include mediaq($md){
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .copy-text{
+        p{
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            color: #757677;
+        }
+    }
+}
